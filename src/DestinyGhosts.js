@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React from "react";
 import csv from "csv/lib/es5/sync";
 
 const parseGhosts = contents => {
