@@ -1,9 +1,8 @@
 import React from "react";
 
 import DestinyWeapons from "./DestinyWeapons";
-
-const DestinyArmor = () => <p>armor</p>;
-const DestinyGhosts = () => <p>ghosts</p>;
+import DestinyArmor from "./DestinyArmor";
+import DestinyGhosts from "./DestinyGhosts";
 
 const InventoryFile = ({ type, contents }) => {
   if (type === null) {
