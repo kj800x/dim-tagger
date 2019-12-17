@@ -51,6 +51,17 @@ const ArmorView = value => ({
     });
     return ArmorView(value);
   },
+  tag: tag => {
+    value.forEach(sortedBucket => {
+      for (let i = 0; i < sortedBucket.length; i++) {
+        sortedBucket[i].Tag = tag;
+      }
+    });
+    return ArmorView(value);
+  },
+  buckets: () => {
+    return ArmorView(value.map(v => [v]));
+  },
   value: () => value
 });
 

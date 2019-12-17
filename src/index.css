@@ -1,8 +1,22 @@
 body {
   margin: 0;
   background: hsl(180, 1%, 19%);
-  color: white;
+  color: #ccc;
   font-family: Arial, sans-serif;
+}
+tr:nth-of-type(even) {
+  background: hsl(180, 1%, 21%);
+}
+tr:hover {
+  background: hsl(180, 1%, 25%);
+}
+
+table {
+  border-collapse: collapse;
+}
+td,
+th {
+  padding: 2px 0px;
 }
 
 th {

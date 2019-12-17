@@ -45,7 +45,7 @@ const colorFromTier = tier => {
 const colorFromTag = tag => {
   switch (tag) {
     case "favorite":
-      return "grey";
+      return "#00cea9";
     case "keep":
       return "green";
     case "infuse":
@@ -101,7 +101,6 @@ const ArmorTable = ({ processed }) => {
     <table className="text-center w-100p">
       <thead>
         <tr>
-          {/* <th className="text-left">Color</th> */}
           <th className="text-left">Name</th>
           <th>Power</th>
           <th>Old Tag</th>
@@ -118,19 +117,13 @@ const ArmorTable = ({ processed }) => {
       <tbody>
         {sortBy(
           "Equippable",
-          "Tier",
           "Type",
           "Masterwork Type",
+          "Tier",
           "Total (Base)",
           "Masterwork Tier"
         )(processed).map(armor => (
           <tr key={armor.Id}>
-            {/* <td
-              style={{ color: colorFromTier(armor.Tier) }}
-              className="text-left"
-            >
-              {armor.Tier}
-            </td> */}
             <td
               style={{ color: colorFromTier(armor.Tier) }}
               className="text-left"
