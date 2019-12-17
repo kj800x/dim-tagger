@@ -24,24 +24,26 @@ const DestinyGhosts = ({ contents }) => {
   console.log(parseGhosts(contents));
 
   return (
-    <table>
-      <thead>
-        <tr>
-          {header.map(e => (
-            <th key={e}>{e}</th>
-          ))}
-        </tr>
-      </thead>
-      <tbody>
-        {data.map((row, i) => (
-          <tr key={i}>
-            {row.map(e => (
-              <td key={e}>{e}</td>
+    <div className="table-section">
+      <table>
+        <thead>
+          <tr>
+            {header.map(e => (
+              <th key={e}>{e}</th>
             ))}
           </tr>
-        ))}
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          {data.map((row, i) => (
+            <tr key={i}>
+              {row.map(e => (
+                <td key={e}>{e}</td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
   );
 };
 

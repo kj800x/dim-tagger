@@ -1,15 +1,15 @@
 import React from "react";
 
-import DestinyWeapons from "./DestinyWeapons";
-import DestinyArmor from "./DestinyArmor";
-import DestinyGhosts from "./DestinyGhosts";
+import DestinyWeapons from "./weapons/DestinyWeapons";
+import DestinyArmor from "./armor/DestinyArmor";
+import DestinyGhosts from "./ghosts/DestinyGhosts";
 
 const InventoryFile = ({ type, contents }) => {
   if (type === null) {
     return null;
   }
   if (contents === null) {
-    return <div>Loading...</div>;
+    return <div className="section">Loading...</div>;
   }
   if (type.includes("destinyWeapons")) {
     return <DestinyWeapons contents={contents} />;
@@ -21,9 +21,10 @@ const InventoryFile = ({ type, contents }) => {
     return <DestinyGhosts contents={contents} />;
   }
   return (
-    <div>
-      Unknown File. Load destinyWeapons.csv, destinyArmor.csv, or
-      destinyGhosts.csv
+    <div className="section">
+      <div style={{ color: "red" }}>Error: Unknown File.</div>
+      <br />
+      <div>Load destinyWeapons.csv, destinyArmor.csv, or destinyGhosts.csv</div>
     </div>
   );
 };

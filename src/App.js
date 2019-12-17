@@ -1,6 +1,7 @@
 import React, { useRef, useCallback, useState } from "react";
-import "./App.css";
+
 import InventoryFile from "./InventoryFile";
+import Instructions from "./Instructions";
 
 function App() {
   const fileRef = useRef(null);
@@ -27,12 +28,18 @@ function App() {
   return (
     <div>
       <header>
-        <p>DIM-Tagger</p>
+        <h1>DIM-Tagger</h1>
       </header>
-      <div>
-        <input type="file" ref={fileRef} onChange={fileCallback} />
-        <InventoryFile type={fileType} contents={fileContents} />
+      <div className="section">
+        Input CSV: <input type="file" ref={fileRef} onChange={fileCallback} />
       </div>
+      <InventoryFile type={fileType} contents={fileContents} />
+      {fileType === null ? (
+        <Instructions
+          setFileType={setFileType}
+          setFileContents={setFileContents}
+        />
+      ) : null}
     </div>
   );
 }
