@@ -4,8 +4,8 @@ const path = require("path");
 
 const MANIFEST_URL = "https://www.bungie.net/Platform/Destiny2/Manifest/";
 
-async function fetchFile(path, file) {
-  const url = `https://www.bungie.net/${path}`;
+async function fetchFile(resource, file) {
+  const url = `https://www.bungie.net/${resource}`;
   const contents = await (await fetch(url)).json();
   fs.writeFileSync(
     path.join(__dirname, "..", "data", file),
