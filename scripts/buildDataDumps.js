@@ -24,7 +24,7 @@ async function buildDataDumps() {
     "DiidManifest"
   ));
 
-  const DestinyInventoryBucketDefintion = require(path.join(
+  const DestinyInventoryBucketDefinition = require(path.join(
     __dirname,
     "..",
     "data",
@@ -43,6 +43,39 @@ async function buildDataDumps() {
       .filter(item => item["itemTypeDisplayName"] === "Shader")
       .map(item => [item.displayProperties.name, item.inventory.tierTypeName]),
     "shaders.js"
+  );
+
+  writeDump(
+    Object.values(DestinyInventoryItemDefinition)
+      .filter(item => item["itemType"] === 3) // Weapons
+      .map(item => [
+        item.displayProperties.name,
+        item.inventory.tierTypeName,
+        DestinyInventoryBucketDefinition[item.inventory.bucketTypeHash]
+          .displayProperties.name
+      ]),
+    "weapons.js"
+  );
+
+  writeDump(
+    Object.values(DestinyInventoryItemDefinition)
+      .filter(
+        item =>
+          item["itemTypeDisplayName"] &&
+          (item["itemTypeDisplayName"] === "Intrinsic" ||
+            item["itemTypeDisplayName"].includes("Barrel") ||
+            item["itemTypeDisplayName"].includes("Magazine") ||
+            item["itemTypeDisplayName"].includes("Sight") ||
+            item["itemTypeDisplayName"].includes("Trait") ||
+            item["itemTypeDisplayName"].includes("Stock") ||
+            item["itemTypeDisplayName"].includes("Grip") ||
+            item["itemTypeDisplayName"].includes("Battery"))
+      )
+      .map(item => [
+        item.displayProperties.name,
+        item.itemTypeDisplayName.replace("Launcher Barrel", "Barrel")
+      ]),
+    "perks.js"
   );
 }
 
