@@ -1,5 +1,5 @@
 // Do not edit manually - generated with "npm run update-data"
-// Last Updated: 2019-12-18T20:55:21.675Z
+// Last Updated: 2019-12-18T21:04:41.092Z
 
 export default [
   [
@@ -13,6 +13,10 @@ export default [
   [
     "Cleanshot IS",
     "Sight"
+  ],
+  [
+    "Compact Arrow Shaft",
+    "Arrow"
   ],
   [
     "The Scientific Method",
@@ -29,6 +33,10 @@ export default [
   [
     "Opening Shot",
     "Trait"
+  ],
+  [
+    "Balanced Guard",
+    "Guard"
   ],
   [
     "Base Magazine",
@@ -71,6 +79,18 @@ export default [
     "Trait"
   ],
   [
+    "Transmission MS7",
+    "Scope"
+  ],
+  [
+    "Impulse MS3",
+    "Scope"
+  ],
+  [
+    "Signal MS5",
+    "Scope"
+  ],
+  [
     "Lightning Rod",
     "Trait"
   ],
@@ -105,6 +125,14 @@ export default [
   [
     "Rapid Hit",
     "Trait"
+  ],
+  [
+    "Chain Bowstring",
+    "Bowstring"
+  ],
+  [
+    "Swordmaster's Guard",
+    "Guard"
   ],
   [
     "Restorative Warlock Armor",
@@ -151,6 +179,18 @@ export default [
     "Trait"
   ],
   [
+    "SRO-52 Ocular",
+    "Scope"
+  ],
+  [
+    "SRO-41 Ocular",
+    "Scope"
+  ],
+  [
+    "SRO-37 Ocular",
+    "Scope"
+  ],
+  [
     "Shock Blast",
     "Intrinsic"
   ],
@@ -181,6 +221,10 @@ export default [
   [
     "Delayed Gratification",
     "Intrinsic"
+  ],
+  [
+    "Hungry Edge",
+    "Blade"
   ],
   [
     "Tactic SAS",
@@ -263,6 +307,14 @@ export default [
     "Intrinsic"
   ],
   [
+    "Zoom 30 Focus",
+    "Scope"
+  ],
+  [
+    "Zoom 10 Point",
+    "Scope"
+  ],
+  [
     "Prismatic Inferno",
     "Intrinsic"
   ],
@@ -287,6 +339,10 @@ export default [
     "Intrinsic"
   ],
   [
+    "Enduring Guard",
+    "Guard"
+  ],
+  [
     "Restorative Warlock Armor",
     "Intrinsic"
   ],
@@ -301,6 +357,22 @@ export default [
   [
     "Conserve Momentum",
     "Intrinsic"
+  ],
+  [
+    "Model 8 Red",
+    "Scope"
+  ],
+  [
+    "Model 6 Loop",
+    "Scope"
+  ],
+  [
+    "Rifle Scope SSF",
+    "Scope"
+  ],
+  [
+    "Rifle Scope ST",
+    "Scope"
   ],
   [
     "Light Mag",
@@ -335,6 +407,14 @@ export default [
     "Trait"
   ],
   [
+    "9RECT Telescopic",
+    "Scope"
+  ],
+  [
+    "50VAL Telescopic",
+    "Scope"
+  ],
+  [
     "Play with Your Prey",
     "Trait"
   ],
@@ -349,6 +429,14 @@ export default [
   [
     "SUROS Rapid-Fire",
     "Intrinsic"
+  ],
+  [
+    "Devil Scope D2",
+    "Scope"
+  ],
+  [
+    "Dusk Scope D2",
+    "Scope"
   ],
   [
     "Shattering Blade",
@@ -371,6 +459,10 @@ export default [
     "Barrel"
   ],
   [
+    "Polymer String",
+    "Bowstring"
+  ],
+  [
     "Vermin",
     "Trait"
   ],
@@ -387,6 +479,22 @@ export default [
     "Intrinsic"
   ],
   [
+    "ATA Scout",
+    "Scope"
+  ],
+  [
+    "ATC Rex",
+    "Scope"
+  ],
+  [
+    "ATB Long Range",
+    "Scope"
+  ],
+  [
+    "ATD Raptor",
+    "Scope"
+  ],
+  [
     "Precision Frame",
     "Intrinsic"
   ],
@@ -397,6 +505,22 @@ export default [
   [
     "Sneak Bow",
     "Trait"
+  ],
+  [
+    "Condor SS2",
+    "Scope"
+  ],
+  [
+    "Yepaki SS2",
+    "Scope"
+  ],
+  [
+    "Aquila SS4",
+    "Scope"
+  ],
+  [
+    "Corvo SS2",
+    "Scope"
   ],
   [
     "Collector +2",
@@ -421,6 +545,10 @@ export default [
   [
     "Resolute",
     "Intrinsic"
+  ],
+  [
+    "Tempered Edge",
+    "Blade"
   ],
   [
     "Personal Assistant",
@@ -575,12 +703,20 @@ export default [
     "Trait"
   ],
   [
+    "Enduring Guard",
+    "Guard"
+  ],
+  [
     "Penance",
     "Trait"
   ],
   [
     "Saint's Fists",
     "Intrinsic"
+  ],
+  [
+    "Tactile String",
+    "Bowstring"
   ],
   [
     "Scion of Mercury",
@@ -623,6 +759,10 @@ export default [
     "Intrinsic"
   ],
   [
+    "Enduring Blade",
+    "Blade"
+  ],
+  [
     "Reaper +1",
     "Intrinsic"
   ],
@@ -657,6 +797,18 @@ export default [
   [
     "Barrel Shroud",
     "Barrel"
+  ],
+  [
+    "LC Ranged",
+    "Scope"
+  ],
+  [
+    "LB Assault",
+    "Scope"
+  ],
+  [
+    "LD Watchdog",
+    "Scope"
   ],
   [
     "Precision Frame",
@@ -701,6 +853,14 @@ export default [
   [
     "Wave Frame",
     "Intrinsic"
+  ],
+  [
+    "Combat Sights",
+    "Scope"
+  ],
+  [
+    "Marksman Sights",
+    "Scope"
   ],
   [
     "Spark PS",
@@ -787,6 +947,22 @@ export default [
     "Intrinsic"
   ],
   [
+    "Ranged Lens RLR5",
+    "Scope"
+  ],
+  [
+    "Focus Lens FLS2",
+    "Scope"
+  ],
+  [
+    "Ranged Lens RLS3",
+    "Scope"
+  ],
+  [
+    "Natural Fletching",
+    "Arrow"
+  ],
+  [
     "Aggressive Frame",
     "Intrinsic"
   ],
@@ -833,6 +1009,26 @@ export default [
   [
     "Speed Demon",
     "Intrinsic"
+  ],
+  [
+    "SSO-08 Sniper",
+    "Scope"
+  ],
+  [
+    "SSO-05 Sniper",
+    "Scope"
+  ],
+  [
+    "SSO-07 Sniper",
+    "Scope"
+  ],
+  [
+    "Torch HS3",
+    "Scope"
+  ],
+  [
+    "Flash HS5",
+    "Scope"
   ],
   [
     "Grave Robber",
@@ -951,6 +1147,10 @@ export default [
     "Intrinsic"
   ],
   [
+    "Natural String",
+    "Bowstring"
+  ],
+  [
     "Explosive Shadow",
     "Intrinsic"
   ],
@@ -1051,6 +1251,10 @@ export default [
     "Intrinsic"
   ],
   [
+    "Anti-Taken Fletching",
+    "Arrow"
+  ],
+  [
     "Black Powder",
     "Magazine"
   ],
@@ -1089,6 +1293,14 @@ export default [
   [
     "Hailstorm",
     "Trait"
+  ],
+  [
+    "SC Holo",
+    "Scope"
+  ],
+  [
+    "SD Thermal",
+    "Scope"
   ],
   [
     "Precision Frame",
@@ -1131,6 +1343,10 @@ export default [
     "Intrinsic"
   ],
   [
+    "Carbon Arrow Shaft",
+    "Arrow"
+  ],
+  [
     "MIDA Synergy",
     "Trait"
   ],
@@ -1149,6 +1365,26 @@ export default [
   [
     "Double Dodge",
     "Intrinsic"
+  ],
+  [
+    "Longview SLR10",
+    "Scope"
+  ],
+  [
+    "Ambush SLH25",
+    "Scope"
+  ],
+  [
+    "EagleEye SLR20",
+    "Scope"
+  ],
+  [
+    "Shortgaze SLH10",
+    "Scope"
+  ],
+  [
+    "Longview SLR20",
+    "Scope"
   ],
   [
     "Crystalline Transistor",
@@ -1207,6 +1443,10 @@ export default [
     "Trait"
   ],
   [
+    "Heavy Guard",
+    "Guard"
+  ],
+  [
     "Aggressive Frame",
     "Intrinsic"
   ],
@@ -1217,6 +1457,10 @@ export default [
   [
     "Trench Barrel",
     "Trait"
+  ],
+  [
+    "Infinite Guard",
+    "Guard"
   ],
   [
     "Cruel Remedy",
@@ -1235,6 +1479,14 @@ export default [
     "Intrinsic"
   ],
   [
+    "Red Dot Micro",
+    "Scope"
+  ],
+  [
+    "Red Dot 2 MOA",
+    "Scope"
+  ],
+  [
     "TrueSight IS",
     "Sight"
   ],
@@ -1245,6 +1497,14 @@ export default [
   [
     "Quickdraw IS",
     "Sight"
+  ],
+  [
+    "Satou Focus Lens",
+    "Scope"
+  ],
+  [
+    "Satou Precision Lens",
+    "Scope"
   ],
   [
     "Extended Mag",
@@ -1355,6 +1615,18 @@ export default [
     "Intrinsic"
   ],
   [
+    "Red Dot-OAS",
+    "Scope"
+  ],
+  [
+    "Red Dot-ORS",
+    "Scope"
+  ],
+  [
+    "Red Dot-ORS1",
+    "Scope"
+  ],
+  [
     "Slug Rifle",
     "Intrinsic"
   ],
@@ -1369,6 +1641,10 @@ export default [
   [
     "Killing Tally",
     "Trait"
+  ],
+  [
+    "Elastic String",
+    "Bowstring"
   ],
   [
     "Nightmare Fuel",
@@ -1389,6 +1665,10 @@ export default [
   [
     "Heavy Titan Armor",
     "Intrinsic"
+  ],
+  [
+    "Honed Edge",
+    "Blade"
   ],
   [
     "Rangefinder",
@@ -1511,6 +1791,18 @@ export default [
     "Magazine"
   ],
   [
+    "SPO-28 Front",
+    "Scope"
+  ],
+  [
+    "SPO-57 Front",
+    "Scope"
+  ],
+  [
+    "SPO-26 Front",
+    "Scope"
+  ],
+  [
     "Heavy Hunter Armor",
     "Intrinsic"
   ],
@@ -1587,6 +1879,10 @@ export default [
     "Magazine"
   ],
   [
+    "Helical Fletching",
+    "Arrow"
+  ],
+  [
     "Smooth Grip",
     "Grip"
   ],
@@ -1627,6 +1923,10 @@ export default [
     "Trait"
   ],
   [
+    "High Tension String",
+    "Bowstring"
+  ],
+  [
     "Sticky Grenades",
     "Magazine"
   ],
@@ -1649,6 +1949,10 @@ export default [
   [
     "Rampage",
     "Trait"
+  ],
+  [
+    "Fiberglass Arrow Shaft",
+    "Arrow"
   ],
   [
     "Meyrin RDS",
@@ -1743,6 +2047,10 @@ export default [
     "Intrinsic"
   ],
   [
+    "Burst Guard",
+    "Guard"
+  ],
+  [
     "Tesseract",
     "Intrinsic"
   ],
@@ -1769,6 +2077,10 @@ export default [
   [
     "Scissor Fingers",
     "Intrinsic"
+  ],
+  [
+    "Jagged Edge",
+    "Blade"
   ],
   [
     "The Fate of All Fools",
@@ -1803,12 +2115,20 @@ export default [
     "Intrinsic"
   ],
   [
+    "Burst Guard",
+    "Guard"
+  ],
+  [
     "Shock Blast",
     "Intrinsic"
   ],
   [
     "Payday",
     "Intrinsic"
+  ],
+  [
+    "Agile Bowstring",
+    "Bowstring"
   ],
   [
     "Heavy Titan Armor",
@@ -1833,6 +2153,10 @@ export default [
   [
     "Countermass",
     "Barrel"
+  ],
+  [
+    "Straight Fletching",
+    "Arrow"
   ],
   [
     "Mobile Hunter Armor",
@@ -1939,6 +2263,10 @@ export default [
     "Intrinsic"
   ],
   [
+    "Flexible String",
+    "Bowstring"
+  ],
+  [
     "Threat Detector",
     "Trait"
   ],
@@ -2025,6 +2353,14 @@ export default [
   [
     "Fitted Stock",
     "Stock"
+  ],
+  [
+    "Mark 15 Lens",
+    "Scope"
+  ],
+  [
+    "Mark 10 Glass",
+    "Scope"
   ],
   [
     "Full Auto Trigger System",

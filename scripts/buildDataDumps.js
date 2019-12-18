@@ -62,15 +62,21 @@ async function buildDataDumps() {
       .filter(
         item =>
           item["itemTypeDisplayName"] &&
-          (item["itemTypeDisplayName"] === "Intrinsic" ||
+          (item["itemTypeDisplayName"].includes("Intrinsic") ||
             item["itemTypeDisplayName"].includes("Barrel") ||
             item["itemTypeDisplayName"].includes("Magazine") ||
             item["itemTypeDisplayName"].includes("Sight") ||
             item["itemTypeDisplayName"].includes("Trait") ||
             item["itemTypeDisplayName"].includes("Stock") ||
             item["itemTypeDisplayName"].includes("Grip") ||
-            item["itemTypeDisplayName"].includes("Battery"))
+            item["itemTypeDisplayName"].includes("Arrow") ||
+            item["itemTypeDisplayName"].includes("Bowstring") ||
+            item["itemTypeDisplayName"].includes("Battery") ||
+            item["itemTypeDisplayName"].includes("Blade") ||
+            item["itemTypeDisplayName"].includes("Guard") ||
+            item["itemTypeDisplayName"].includes("Scope"))
       )
+
       .map(item => [
         item.displayProperties.name,
         item.itemTypeDisplayName.replace("Launcher Barrel", "Barrel")

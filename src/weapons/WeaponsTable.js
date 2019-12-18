@@ -2,6 +2,7 @@ import React from "react";
 import colorFromTier from "../formatting/colorFromTier";
 import colorFromElement from "../formatting/colorFromElement";
 import colorFromTag from "../formatting/colorFromTag";
+import colorFromSlot from "../formatting/colorFromSlot";
 import element from "../formatting/element";
 import gradient from "../formatting/gradient";
 import sortBy from "../sortBy";
@@ -15,6 +16,7 @@ const WeaponsTable = ({ processed }) => {
           <th>Power</th>
           <th>Old Tag</th>
           <th>New Tag</th>
+          <th>Slot</th>
           <th>Type</th>
           <th>Element</th>
           <th>Masterwork Tier</th>
@@ -25,6 +27,7 @@ const WeaponsTable = ({ processed }) => {
       </thead>
       <tbody>
         {sortBy(
+          "slot",
           "Type",
           "Name"
         )(processed).map(weapon => (
@@ -46,6 +49,7 @@ const WeaponsTable = ({ processed }) => {
               {weapon.originalTag}
             </td>
             <td style={{ color: colorFromTag(weapon.Tag) }}>{weapon.Tag}</td>
+            <td style={{ color: colorFromSlot(weapon.slot) }}>{weapon.slot}</td>
             <td>{weapon.Type}</td>
             <td
               style={{
@@ -71,8 +75,7 @@ const WeaponsTable = ({ processed }) => {
             </td>
             <td className="text-left">
               {weapon["perks"]
-                // .filter(perk => !perk.includes("*"))
-                .map(perk => perk.replace("*", ""))
+                .map(([name, type]) => `${name} (${type})`)
                 .join(", ")}
             </td>
           </tr>

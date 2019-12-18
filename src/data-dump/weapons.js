@@ -1,5 +1,5 @@
 // Do not edit manually - generated with "npm run update-data"
-// Last Updated: 2019-12-18T20:55:21.659Z
+// Last Updated: 2019-12-18T21:04:41.078Z
 
 export default [
   [
