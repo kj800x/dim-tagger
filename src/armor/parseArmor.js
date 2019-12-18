@@ -1,9 +1,9 @@
 import parseCsv from "../parseCsv";
 
-import ArmorView from "./ArmorView";
+import StreamView from "../StreamView";
 
 const parseArmor = contents => {
-  const armor = parseCsv(contents, 7);
+  const armor = parseCsv(contents, 50);
   armor.forEach(piece => {
     piece.gambitPrime =
       piece.perks.find(
@@ -18,7 +18,7 @@ const parseArmor = contents => {
       : "";
     piece.originalTag = piece.Tag;
   });
-  return ArmorView(armor);
+  return StreamView(armor);
 };
 
 export default parseArmor;

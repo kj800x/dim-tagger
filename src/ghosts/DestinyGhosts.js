@@ -1,48 +1,26 @@
 import React from "react";
-import csv from "csv/lib/es5/sync";
-
-const parseGhosts = contents => {
-  const [header, ...data] = csv.parse(contents);
-  var out = [];
-  for (var i = 0; i < data.length; i++) {
-    var obj = {};
-    var perks = [];
-    for (var j = 0; j < header.length; j++) {
-      obj[header[j]] = data[i][j];
-    }
-    for (var z = 0; z < 5; z++) {
-      perks[z] = obj[`Perks ${z}`];
-    }
-    obj.perks = perks.filter(e => e);
-    out.push(obj);
-  }
-  return out;
-};
+import Download from "../Download";
+import renderGhosts from "./renderGhosts";
+import processGhosts from "./processGhosts";
+import getHeader from "../getHeader";
+import GhostsTable from "./GhostsTable";
 
 const DestinyGhosts = ({ contents }) => {
-  const [header, ...data] = csv.parse(contents);
-  console.log(parseGhosts(contents));
-
+  const ghosts = processGhosts(contents);
   return (
-    <div className="table-section">
-      <table>
-        <thead>
-          <tr>
-            {header.map(e => (
-              <th key={e}>{e}</th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          {data.map((row, i) => (
-            <tr key={i}>
-              {row.map(e => (
-                <td key={e}>{e}</td>
-              ))}
-            </tr>
-          ))}
-        </tbody>
-      </table>
+    <div>
+      <div className="section">
+        Output CSV:{" "}
+        <Download
+          filename="destinyGhosts.csv"
+          contents={renderGhosts(getHeader(contents), ghosts)}
+        >
+          Download
+        </Download>
+      </div>
+      <div className="table-section">
+        <GhostsTable processed={ghosts} />
+      </div>
     </div>
   );
 };

@@ -1,8 +1,8 @@
 const not = fn => x => !fn(x);
 
-const ArmorView = value => ({
-  without: pred => ArmorView(value.filter(not(pred))),
-  only: pred => ArmorView(value.filter(pred)),
+const StreamView = value => ({
+  without: pred => StreamView(value.filter(not(pred))),
+  only: pred => StreamView(value.filter(pred)),
   bucketBy: (...keys) => {
     const out = {};
     for (let x of value) {
@@ -10,7 +10,7 @@ const ArmorView = value => ({
       out[key] = out[key] || [];
       out[key].push(x);
     }
-    return ArmorView(out);
+    return StreamView(out);
   },
   sortBy: (...keys) => {
     const contents = Object.values(value);
@@ -27,13 +27,13 @@ const ArmorView = value => ({
         })
       );
     }
-    return ArmorView(sortedBuckets);
+    return StreamView(sortedBuckets);
   },
   tagFirstInGroup: tag => {
     value.forEach(sortedBucket => {
       sortedBucket[0].Tag = tag;
     });
-    return ArmorView(value);
+    return StreamView(value);
   },
   tagRestInGroup: tag => {
     value.forEach(sortedBucket => {
@@ -41,7 +41,7 @@ const ArmorView = value => ({
         sortedBucket[i].Tag = tag;
       }
     });
-    return ArmorView(value);
+    return StreamView(value);
   },
   tagFirstInGroupIfJunk: tag => {
     value.forEach(sortedBucket => {
@@ -49,7 +49,7 @@ const ArmorView = value => ({
         sortedBucket[0].Tag = tag;
       }
     });
-    return ArmorView(value);
+    return StreamView(value);
   },
   tag: tag => {
     value.forEach(sortedBucket => {
@@ -57,12 +57,12 @@ const ArmorView = value => ({
         sortedBucket[i].Tag = tag;
       }
     });
-    return ArmorView(value);
+    return StreamView(value);
   },
   buckets: () => {
-    return ArmorView(value.map(v => [v]));
+    return StreamView(value.map(v => [v]));
   },
   value: () => value
 });
 
-export default ArmorView;
+export default StreamView;

@@ -1,28 +1,26 @@
 import React from "react";
-import csv from "csv/lib/es5/sync";
+import Download from "../Download";
+import renderWeapons from "./renderWeapons";
+import processWeapons from "./processWeapons";
+import getHeader from "../getHeader";
+import WeaponsTable from "./WeaponsTable";
 
 const DestinyWeapons = ({ contents }) => {
-  const [header, ...data] = csv.parse(contents);
+  const weapons = processWeapons(contents);
   return (
-    <div className="table-section">
-      <table>
-        <thead>
-          <tr>
-            {header.map(e => (
-              <th key={e}>{e}</th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          {data.map((row, i) => (
-            <tr key={i}>
-              {row.map(e => (
-                <td key={e}>{e}</td>
-              ))}
-            </tr>
-          ))}
-        </tbody>
-      </table>
+    <div>
+      <div className="section">
+        Output CSV:{" "}
+        <Download
+          filename="destinyWeapons.csv"
+          contents={renderWeapons(getHeader(contents), weapons)}
+        >
+          Download
+        </Download>
+      </div>
+      <div className="table-section">
+        <WeaponsTable processed={weapons} />
+      </div>
     </div>
   );
 };
