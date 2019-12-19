@@ -4,9 +4,10 @@ import colorFromElement from "../formatting/colorFromElement";
 import colorFromTag from "../formatting/colorFromTag";
 import colorFromSlot from "../formatting/colorFromSlot";
 import element from "../formatting/element";
-import gradient from "../formatting/gradient";
+import gradient, { advancedGradient } from "../formatting/gradient";
 import sortBy from "../sortBy";
-import SearchableIcon from "./SearchableIcon";
+import SearchableIcon from "../SearchableIcon";
+import { scoreColors } from "./scorePerk";
 
 const WeaponRow = ({ weapon }) => (
   <tr key={weapon.Id}>
@@ -53,29 +54,72 @@ const WeaponRow = ({ weapon }) => (
         <SearchableIcon icon={weapon.ornament[2]} text={weapon.ornament[0]} />
       )}
     </td>
+    <td
+      style={{
+        color: advancedGradient(
+          [
+            [-5, "#ff0000"],
+            [10, "#00ff00"]
+          ],
+          weapon.perkScore
+        )
+      }}
+    >
+      {weapon.perkScore}
+    </td>
     <td>
-      {weapon["intrinsic"].map(([name, type, img]) => (
-        <SearchableIcon key={name} icon={img} text={name} />
+      {weapon["intrinsic"].map(([name, type, img, desc, score]) => (
+        <SearchableIcon
+          key={name}
+          icon={img}
+          text={name}
+          titleText={name + "\n\n" + desc}
+          background={scoreColors[score]}
+        />
       ))}
     </td>
     <td>
-      {weapon["bbbss"].map(([name, type, img]) => (
-        <SearchableIcon key={name} icon={img} text={name} />
+      {weapon["bbbss"].map(([name, type, img, desc, score]) => (
+        <SearchableIcon
+          key={name}
+          icon={img}
+          text={name}
+          titleText={name + "\n\n" + desc}
+          background={scoreColors[score]}
+        />
       ))}
     </td>
     <td>
-      {weapon["gmba"].map(([name, type, img]) => (
-        <SearchableIcon key={name} icon={img} text={name} />
+      {weapon["gmba"].map(([name, type, img, desc, score]) => (
+        <SearchableIcon
+          key={name}
+          icon={img}
+          text={name}
+          titleText={name + "\n\n" + desc}
+          background={scoreColors[score]}
+        />
       ))}
     </td>
     <td>
-      {weapon["traits"].map(([name, type, img]) => (
-        <SearchableIcon key={name} icon={img} text={name} />
+      {weapon["traits"].map(([name, type, img, desc, score]) => (
+        <SearchableIcon
+          key={name}
+          icon={img}
+          text={name}
+          titleText={name + "\n\n" + desc}
+          background={scoreColors[score]}
+        />
       ))}
     </td>
     <td>
-      {weapon["sg"].map(([name, type, img]) => (
-        <SearchableIcon key={name} icon={img} text={name} />
+      {weapon["sg"].map(([name, type, img, desc, score]) => (
+        <SearchableIcon
+          key={name}
+          icon={img}
+          text={name}
+          titleText={name + "\n\n" + desc}
+          background={scoreColors[score]}
+        />
       ))}
     </td>
   </tr>
@@ -97,6 +141,7 @@ const WeaponsTable = ({ processed }) => {
           <th>Masterwork Tier</th>
           <th>Shader</th>
           <th>Ornament</th>
+          <th>Perk Score</th>
           <th>Intrinsic</th>
           <th title="Blade, Barrel, Bowstring, Scope, Sight">BBBSS</th>
           <th title="Guard, Magazine, Battery, Arrow">GMBA</th>
@@ -108,7 +153,9 @@ const WeaponsTable = ({ processed }) => {
         {sortBy(
           "slot",
           "Type",
-          "Name"
+          "Name",
+          "perkScore",
+          "Masterwork Tier"
         )(processed).map(weapon => (
           <WeaponRow key={weapon.Id} weapon={weapon} />
         ))}

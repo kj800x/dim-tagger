@@ -5,9 +5,18 @@ import SHADERS from "../data-dump/shaders";
 import ORNAMENTS from "../data-dump/ornaments";
 import PERKS from "../data-dump/perks";
 import WEAPONS from "../data-dump/weapons";
+import scorePerk from "./scorePerk";
 
-const buildPerk = perkName => {
-  return PERKS.find(perk => perk[0] === perkName) || [perkName, "unknown"];
+const buildPerk = gunType => perkName => {
+  return [
+    ...(PERKS.find(perk => perk[0] === perkName) || [
+      perkName,
+      "unknown",
+      "",
+      ""
+    ]),
+    scorePerk(perkName, gunType)
+  ];
 };
 
 const parseWeapons = contents => {
@@ -45,7 +54,8 @@ const parseWeapons = contents => {
 
     gun.icon = WEAPONS.find(weapon => weapon[0] === gun.Name)[3];
 
-    gun.perks = gun.perks.map(buildPerk);
+    gun.perks = gun.perks.map(buildPerk(gun.Type));
+    gun.perkScore = gun.perks.map(perk => perk[4]).reduce((a, b) => a + b, 0);
 
     gun.intrinsic = gun.perks.filter(perk => perk[1] === "Intrinsic");
     gun.bbbss = gun.perks.filter(

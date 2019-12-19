@@ -59,6 +59,15 @@ const StreamView = value => ({
     });
     return StreamView(value);
   },
+  tagIf: (tag, fn) => {
+    value.forEach(sortedBucket => {
+      for (let i = 0; i < sortedBucket.length; i++) {
+        if (fn(sortedBucket[i], i, sortedBucket)) {
+          sortedBucket[i].Tag = tag;
+        }
+      }
+    });
+  },
   buckets: () => {
     return StreamView(value.map(v => [v]));
   },

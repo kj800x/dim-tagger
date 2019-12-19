@@ -2,7 +2,7 @@ import React from "react";
 import colorFromTier from "../formatting/colorFromTier";
 import colorFromTag from "../formatting/colorFromTag";
 import sortBy from "../sortBy";
-import SearchableIcon from "../weapons/SearchableIcon";
+import SearchableIcon from "../SearchableIcon";
 
 const GhostRow = ({ ghost }) => (
   <tr>

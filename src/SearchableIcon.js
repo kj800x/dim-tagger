@@ -1,12 +1,13 @@
 import React from "react";
 
-const SearchableIcon = ({ icon, text }) => (
+const SearchableIcon = ({ icon, text, background, titleText }) => (
   <div
     style={{
       width: 30,
       height: 30,
       position: "relative",
-      display: "inline-block"
+      display: "inline-block",
+      background: background || "transparent"
     }}
   >
     <span
@@ -24,7 +25,7 @@ const SearchableIcon = ({ icon, text }) => (
     <img
       src={"https://www.bungie.net/" + icon}
       alt={text}
-      title={text}
+      title={titleText || text}
       width={30}
       height={30}
       className="icon"

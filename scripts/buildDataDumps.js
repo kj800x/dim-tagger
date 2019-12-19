@@ -89,7 +89,8 @@ async function buildDataDumps() {
       .map(item => [
         item.displayProperties.name,
         item.itemTypeDisplayName.replace("Launcher Barrel", "Barrel"),
-        item.displayProperties.icon
+        item.displayProperties.icon,
+        item.displayProperties.description
       ]),
     "perks.js"
   );
