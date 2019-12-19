@@ -2,6 +2,27 @@ import React from "react";
 import colorFromTier from "../formatting/colorFromTier";
 import colorFromTag from "../formatting/colorFromTag";
 import sortBy from "../sortBy";
+import SearchableIcon from "../weapons/SearchableIcon";
+
+const GhostRow = ({ ghost }) => (
+  <tr>
+    <td style={{ color: colorFromTier(ghost.Tier) }} className="text-left">
+      {ghost.Name}
+    </td>
+    <td style={{ color: colorFromTag(ghost.originalTag) }}>
+      {ghost.originalTag}
+    </td>
+    <td style={{ color: colorFromTag(ghost.Tag) }}>{ghost.Tag}</td>
+    <td>
+      {ghost.shader && (
+        <SearchableIcon icon={ghost.shader[2]} text={ghost.shader[0]} />
+      )}
+    </td>
+    <td className="text-left">
+      {ghost["perks"].map(perk => perk.replace("*", "")).join(", ")}
+    </td>
+  </tr>
+);
 
 const GhostsTable = ({ processed }) => {
   return (
@@ -17,24 +38,7 @@ const GhostsTable = ({ processed }) => {
       </thead>
       <tbody>
         {sortBy("Name")(processed).map(ghost => (
-          <tr key={ghost.Id}>
-            <td
-              style={{ color: colorFromTier(ghost.Tier) }}
-              className="text-left"
-            >
-              {ghost.Name}
-            </td>
-            <td style={{ color: colorFromTag(ghost.originalTag) }}>
-              {ghost.originalTag}
-            </td>
-            <td style={{ color: colorFromTag(ghost.Tag) }}>{ghost.Tag}</td>
-            <td style={{ color: colorFromTier(ghost.shaderTier) }}>
-              {ghost.shader}
-            </td>
-            <td className="text-left">
-              {ghost["perks"].map(perk => perk.replace("*", "")).join(", ")}
-            </td>
-          </tr>
+          <GhostRow key={ghost.Id} ghost={ghost} />
         ))}
       </tbody>
     </table>

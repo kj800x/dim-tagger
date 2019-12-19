@@ -14,22 +14,26 @@ const parseWeapons = contents => {
   const weapons = parseCsv(contents, 19);
   weapons.forEach(gun => {
     gun.originalTag = gun.Tag;
+
     gun.perks = gun.perks.filter(
       perk => !(perk.includes("Tier") && perk.includes("Weapon"))
     );
     gun.perks = gun.perks.map(e => e.replace("*", ""));
-    gun.shader =
-      gun.perks.find(perk => SHADERS.find(([name]) => perk === name)) || "";
+
+    gun.shader = SHADERS.find(shader =>
+      gun.perks.find(perk => perk === shader[0])
+    );
     if (gun.shader) {
-      gun.shaderTier = SHADERS.find(([name]) => name === gun.shader)[1];
-      gun.perks = gun.perks.filter(perk => perk !== gun.shader);
+      gun.perks = gun.perks.filter(perk => perk !== gun.shader[0]);
     }
-    gun.ornament =
-      gun.perks.find(perk => ORNAMENTS.find(([name]) => perk === name)) || "";
+
+    gun.ornament = ORNAMENTS.find(ornament =>
+      gun.perks.find(perk => perk === ornament[0])
+    );
     if (gun.ornament) {
-      gun.ornamentTier = ORNAMENTS.find(([name]) => name === gun.ornament)[1];
-      gun.perks = gun.perks.filter(perk => perk !== gun.ornament);
+      gun.perks = gun.perks.filter(perk => perk !== gun.ornament[0]);
     }
+
     gun.perks = gun.perks.filter(perk => perk !== "Masterwork");
     gun.perks = gun.perks.filter(perk => !perk.includes("Catalyst"));
     gun.perks = gun.perks.filter(perk => !perk.includes("Tracker"));
@@ -39,7 +43,31 @@ const parseWeapons = contents => {
       ""
     );
 
+    gun.icon = WEAPONS.find(weapon => weapon[0] === gun.Name)[3];
+
     gun.perks = gun.perks.map(buildPerk);
+
+    gun.intrinsic = gun.perks.filter(perk => perk[1] === "Intrinsic");
+    gun.bbbss = gun.perks.filter(
+      perk =>
+        perk[1] === "Blade" ||
+        perk[1] === "Barrel" ||
+        perk[1] === "Bowstring" ||
+        perk[1] === "Scope" ||
+        perk[1] === "Sight"
+    );
+    gun.gmba = gun.perks.filter(
+      perk =>
+        perk[1] === "Guard" ||
+        perk[1] === "Magazine" ||
+        perk[1] === "Battery" ||
+        perk[1] === "Arrow"
+    );
+    gun.traits = gun.perks.filter(perk => perk[1] === "Trait");
+    gun.sg = gun.perks.filter(
+      perk => perk[1] === "Stock" || perk[1] === "Grip"
+    );
+    gun.otherPerks = gun.perks.filter(perk => perk[1] === "unknown");
   });
   return StreamView(weapons);
 };

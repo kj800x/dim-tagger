@@ -34,14 +34,22 @@ async function buildDataDumps() {
   writeDump(
     Object.values(DestinyInventoryItemDefinition)
       .filter(item => item["itemTypeDisplayName"] === "Weapon Ornament")
-      .map(item => [item.displayProperties.name, item.inventory.tierTypeName]),
+      .map(item => [
+        item.displayProperties.name,
+        item.inventory.tierTypeName,
+        item.displayProperties.icon
+      ]),
     "ornaments.js"
   );
 
   writeDump(
     Object.values(DestinyInventoryItemDefinition)
       .filter(item => item["itemTypeDisplayName"] === "Shader")
-      .map(item => [item.displayProperties.name, item.inventory.tierTypeName]),
+      .map(item => [
+        item.displayProperties.name,
+        item.inventory.tierTypeName,
+        item.displayProperties.icon
+      ]),
     "shaders.js"
   );
 
@@ -52,7 +60,8 @@ async function buildDataDumps() {
         item.displayProperties.name,
         item.inventory.tierTypeName,
         DestinyInventoryBucketDefinition[item.inventory.bucketTypeHash]
-          .displayProperties.name
+          .displayProperties.name,
+        item.displayProperties.icon
       ]),
     "weapons.js"
   );
@@ -79,7 +88,8 @@ async function buildDataDumps() {
 
       .map(item => [
         item.displayProperties.name,
-        item.itemTypeDisplayName.replace("Launcher Barrel", "Barrel")
+        item.itemTypeDisplayName.replace("Launcher Barrel", "Barrel"),
+        item.displayProperties.icon
       ]),
     "perks.js"
   );

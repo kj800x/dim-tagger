@@ -5,16 +5,17 @@ import SHADERS from "../data-dump/shaders";
 
 const parseWeapons = contents => {
   const ghosts = parseCsv(contents, 50);
+
   ghosts.forEach(ghost => {
     ghost.originalTag = ghost.Tag;
-    ghost.shader = (
-      ghost.perks.find(perk =>
-        SHADERS.find(([name]) => perk.replace("*", "") === name)
-      ) || ""
-    ).replace("*", "");
+
+    ghost.perks = ghost.perks.map(e => e.replace("*", ""));
+
+    ghost.shader = SHADERS.find(shader =>
+      ghost.perks.find(perk => perk === shader[0])
+    );
     if (ghost.shader) {
-      ghost.shaderTier = SHADERS.find(([name]) => name === ghost.shader)[1];
-      ghost.perks = ghost.perks.filter(perk => perk !== ghost.shader + "*");
+      ghost.perks = ghost.perks.filter(perk => perk !== ghost.shader[0]);
     }
   });
   return StreamView(ghosts);
